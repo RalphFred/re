@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class",
   theme: {
     extend: {
       colors: {
@@ -24,6 +25,9 @@ export default {
         "dark-gray": "#202c37",
         "light-gray": "#fafafa",
       },
+      fontFamily: {
+        "nunito": ['Nunito Sans', 'sans-serif'],
+      }
     },
   },
   plugins: [],
