@@ -36,8 +36,8 @@ export default function App() {
   }, [theme]);
 
   return (
-    <div className="p-4 lg:p-12 dark:bg-dark-gray dark:text-white bg-white text-black duration-200 font-nunito">
-      <div className="flex justify-between">
+    <div className="font-nunito">
+      <div className="p-5 lg:px-12 py-8 dark:bg-dark-blue dark:text-white bg-white text-black duration-300 flex justify-between">
         <h1 className="text-lg lg:text-2xl font-bold">Where in the world?</h1>
         <div onClick={toggleTheme} className="text-base lg:text-xl">
           {theme === "light" ? (
