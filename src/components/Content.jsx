@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Flag from "./Flag";
 
 export default function Content() {
   const [search, setSearch] = useState("all");
@@ -22,25 +23,31 @@ export default function Content() {
       .then((res) => res.json())
       .then((data) => {
         setFetchedData(data)
-
-        fetchedData.forEach((country) => {
-          const name = country.name.common;
-          const nativeName = Object.values(country.name.nativeName)[0].common;
-          const topLevelDomain = country.tld[0];
-          const region = country.region;
-          const subRegion = country.subregion;
-          const capital = country.capital[0];
-          const population = country.population;
-          const languages = Object.values(country.languages)[0];
-          const currency = Object.values(country.currencies)[0].name;
-      
-          console.log(name, nativeName, topLevelDomain, region, subRegion, capital, population,languages, currency )
-        });
+      })
+      .catch((error) => {
+        console.error('Error fetching data:', error);
       });
   }, [search]);
 
+  // useEffect(() => {
+  //   const formattedData = fetchedData.map((country) => ({
+  //     name: country.name.common,
+  //     nativeName: Object.values(country.name.nativeName)[0].common,
+  //     topLevelDomain: country.tld[0],
+  //     region: country.region,
+  //     subRegion: country.subregion,
+  //     capital: country.capital,
+  //     population: country.population,
+  //     languages: Object.values(country.languages)[0],
+  //     currency: Object.values(country.currencies)[0].name,
+  //     flag: country.flags.svg,
+  //   }));
+  //   setCountries(formattedData);
+  // }, [fetchedData]);
+
+
   return (
-    <div className="p-5 lg:px-12 py-8 bg-light-gray dark:bg-dark-gray duration-300">
+    <div className="p-5 lg:px-12 py-8 bg-light-gray dark:bg-dark-gray duration-300 min-h-screen">
       <div className="flex flex-col lg:flex-row justify-between">
         <input
           type="text"
@@ -67,8 +74,12 @@ export default function Content() {
           </select>
       </div>
 
-      <div>
-        
+      <div className="py-8 lg:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12 justify-between">
+        {fetchedData.map((country, index) => (          
+          <div key={index} className="rounded-xl shadow-md">
+            <Flag details={country}/>
+          </div>
+        ))}
       </div>
     </div>
   );
