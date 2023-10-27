@@ -75,7 +75,8 @@ export default function Content() {
       </div>
 
       <div className="py-8 lg:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12 justify-between">
-        {fetchedData.map((country, index) => (          
+        { fetchedData.length > 0 &&
+          fetchedData.map((country, index) => (          
           <div key={index} className="rounded-xl shadow-md">
             <Flag details={country}/>
           </div>
