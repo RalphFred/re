@@ -1,59 +1,56 @@
 import { useEffect, useState } from "react";
 import Flag from "./Flag";
 import LoadingState from "./LoadingState";
+import NotFound from "./NotFound";
 
 export default function Content() {
   const [value, setValue] = useState("");
   const [fetchedData, setFetchedData] = useState([]);
   const [countriesData, setCountriesData] = useState([]);
 
-  const [region, setRegion] = useState("all")
-  const [isLoading, setIsLoading] = useState(true)
+  const [region, setRegion] = useState("all");
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    const fetchData = async() => {
+    const fetchData = async () => {
       try {
-        setIsLoading(true)
+        setIsLoading(true);
         await fetch(`https://restcountries.com/v2/${region}`)
-
-        .then((res) => res.json())
-        .then((data) => {
-          setFetchedData(data)
-          setCountriesData(data)
-          setIsLoading(false)
-        })
-      } catch(error) {
-        console.log('Error fetching Data', error)
+          .then((res) => res.json())
+          .then((data) => {
+            setFetchedData(data);
+            setCountriesData(data);
+            setIsLoading(false);
+          });
+      } catch (error) {
+        console.log("Error fetching Data", error);
       }
     };
-    fetchData()
-  }, [region])
+    fetchData();
+  }, [region]);
 
   const handleSelectChange = (e) => {
     const selectedValue = e.target.value;
 
     if (selectedValue === "all") {
-      setRegion(selectedValue)
+      setRegion(selectedValue);
     } else {
-      setRegion(`region/${selectedValue}`)
+      setRegion(`region/${selectedValue}`);
     }
-  }
-
+  };
 
   const filterCountries = (e) => {
     const inputValue = e.target.value;
     setValue(inputValue);
 
-    const filteredData = fetchedData.filter(obj =>
+    const filteredData = fetchedData.filter((obj) =>
       obj.name.toLowerCase().includes(inputValue.toLowerCase())
     );
 
     if (inputValue != "") {
       setCountriesData(filteredData);
-    } 
-};
-
-  
+    }
+  };
 
   // useEffect(() => {
   //   const formattedData = fetchedData.map((country) => ({
@@ -84,7 +81,6 @@ export default function Content() {
 
         <select
           name="filter"
-          
           onChange={handleSelectChange}
           className="px-4 py-3 w-56 bg-white dark:bg-dark-blue dark:text-white rounded-md appearance-none focus:outline-none"
         >
@@ -112,7 +108,7 @@ export default function Content() {
         </select>
       </div>
 
-      {countriesData.length > 0 ? (
+      {/* {countriesData.length > 0 ? (
         <div className="py-8 lg:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12 justify-between">
           {countriesData.map((country, index) => (
             <div key={index} className="rounded-xl shadow-md">
@@ -122,8 +118,28 @@ export default function Content() {
         </div>
       ) : (
         <div>
-          <LoadingState />
+          <NotFound />
         </div>
+      )} */}
+
+      {isLoading ? (
+        <LoadingState />
+      ) : (
+        <>
+          {countriesData.length > 0 ? (
+            <div className="py-8 lg:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12 justify-between">
+              {countriesData.map((country, index) => (
+                <div key={index} className="rounded-xl shadow-md">
+                  <Flag details={country} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div>
+              <NotFound />
+            </div>
+          )}
+        </>
       )}
     </div>
   );
