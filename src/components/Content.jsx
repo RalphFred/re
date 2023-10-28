@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Flag from "./Flag";
 import LoadingState from "./LoadingState";
 import NotFound from "./NotFound";
@@ -107,21 +108,7 @@ export default function Content() {
           </option>
         </select>
       </div>
-
-      {/* {countriesData.length > 0 ? (
-        <div className="py-8 lg:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12 justify-between">
-          {countriesData.map((country, index) => (
-            <div key={index} className="rounded-xl shadow-md">
-              <Flag details={country} />
-            </div>
-          ))}
-        </div>
-      ) : (
-        <div>
-          <NotFound />
-        </div>
-      )} */}
-
+      
       {isLoading ? (
         <LoadingState />
       ) : (
@@ -130,7 +117,9 @@ export default function Content() {
             <div className="py-8 lg:py-16 grid md:grid-cols-2 lg:grid-cols-4 gap-12 justify-between">
               {countriesData.map((country, index) => (
                 <div key={index} className="rounded-xl shadow-md">
-                  <Flag details={country} />
+                  <Link to={`/name/${country.name}`}>
+                    <Flag details={country} />
+                  </Link>
                 </div>
               ))}
             </div>
