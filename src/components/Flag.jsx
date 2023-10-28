@@ -2,7 +2,7 @@ import ng from '../assets/ng.svg'
 
 export default function Flag({ details }){
 
-  const name = details.name.common
+  const name = details.name
   const population= details.population
   const region = details.region
   const flag = details.flags.svg

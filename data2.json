@@ -1,96 +1,66 @@
-[
-  {
-    "name": {
-      "common": "Belgium",
-      "official": "Kingdom of Belgium",
-      "nativeName": {
-        "deu": { "official": "Königreich Belgien", "common": "Belgien" },
-        "fra": { "official": "Royaume de Belgique", "common": "Belgique" },
-        "nld": { "official": "Koninkrijk België", "common": "België" }
-      }
+{
+  "name": "Afghanistan",
+  "topLevelDomain": [".af"],
+  "alpha2Code": "AF",
+  "alpha3Code": "AFG",
+  "callingCodes": ["93"],
+  "capital": "Kabul",
+  "altSpellings": ["AF", "Afġānistān"],
+  "subregion": "Southern Asia",
+  "region": "Asia",
+  "population": 40218234,
+  "latlng": [33.0, 65.0],
+  "demonym": "Afghan",
+  "area": 652230.0,
+  "timezones": ["UTC+04:30"],
+  "borders": ["IRN", "PAK", "TKM", "UZB", "TJK", "CHN"],
+  "nativeName": "افغانستان",
+  "numericCode": "004",
+  "flags": {
+    "svg": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+    "png": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_the_Taliban.svg/320px-Flag_of_the_Taliban.svg.png"
+  },
+  "currencies": [{ "code": "AFN", "name": "Afghan afghani", "symbol": "؋" }],
+  "languages": [
+    {
+      "iso639_1": "ps",
+      "iso639_2": "pus",
+      "name": "Pashto",
+      "nativeName": "پښتو"
     },
-    "tld": [".be"],
-    "cca2": "BE",
-    "ccn3": "056",
-    "cca3": "BEL",
-    "cioc": "BEL",
-    "independent": true,
-    "status": "officially-assigned",
-    "unMember": true,
-    "currencies": { "EUR": { "name": "Euro", "symbol": "€" } },
-    "idd": { "root": "+3", "suffixes": ["2"] },
-    "capital": ["Brussels"],
-    "altSpellings": [
-      "BE",
-      "België",
-      "Belgie",
-      "Belgien",
-      "Belgique",
-      "Kingdom of Belgium",
-      "Koninkrijk België",
-      "Royaume de Belgique",
-      "Königreich Belgien"
-    ],
-    "region": "Europe",
-    "subregion": "Western Europe",
-    "languages": { "deu": "German", "fra": "French", "nld": "Dutch" },
-    "translations": {
-      "ara": { "official": "مملكة بلجيكا", "common": "بلجيكا" },
-      "bre": { "official": "Rouantelezh Belgia", "common": "Belgia" },
-      "ces": { "official": "Belgické království", "common": "Belgie" },
-      "cym": { "official": "Teyrnas Gwlad Belg", "common": "Gwlad Belg" },
-      "deu": { "official": "Königreich Belgien", "common": "Belgien" },
-      "est": { "official": "Belgia Kuningriik", "common": "Belgia" },
-      "fin": { "official": "Belgian kuningaskunta", "common": "Belgia" },
-      "fra": { "official": "Royaume de Belgique", "common": "Belgique" },
-      "hrv": { "official": "Kraljevina Belgija", "common": "Belgija" },
-      "hun": { "official": "Belga Királyság", "common": "Belgium" },
-      "ita": { "official": "Regno del Belgio", "common": "Belgio" },
-      "jpn": { "official": "ベルギー王国", "common": "ベルギー" },
-      "kor": { "official": "벨기에 왕국", "common": "벨기에" },
-      "nld": { "official": "Koninkrijk België", "common": "België" },
-      "per": { "official": "پادشاهی بلژیک", "common": "بلژیک" },
-      "pol": { "official": "Królestwo Belgii", "common": "Belgia" },
-      "por": { "official": "Reino da Bélgica", "common": "Bélgica" },
-      "rus": { "official": "Королевство Бельгия", "common": "Бельгия" },
-      "slk": { "official": "Belgické kráľovstvo", "common": "Belgicko" },
-      "spa": { "official": "Reino de Bélgica", "common": "Bélgica" },
-      "srp": { "official": "Краљевина Белгија", "common": "Белгија" },
-      "swe": { "official": "Konungariket Belgien", "common": "Belgien" },
-      "tur": { "official": "Belçika Krallığı", "common": "Belğika" },
-      "urd": { "official": "مملکتِ بلجئیم", "common": "بلجئیم" },
-      "zho": { "official": "比利时王国", "common": "比利时" }
+    {
+      "iso639_1": "uz",
+      "iso639_2": "uzb",
+      "name": "Uzbek",
+      "nativeName": "Oʻzbek"
     },
-    "latlng": [50.83333333, 4.0],
-    "landlocked": false,
-    "borders": ["FRA", "DEU", "LUX", "NLD"],
-    "area": 30528.0,
-    "demonyms": {
-      "eng": { "f": "Belgian", "m": "Belgian" },
-      "fra": { "f": "Belge", "m": "Belge" }
-    },
-    "flag": "\uD83C\uDDE7\uD83C\uDDEA",
-    "maps": {
-      "googleMaps": "https://goo.gl/maps/UQQzat85TCtPRXAL8",
-      "openStreetMaps": "https://www.openstreetmap.org/relation/52411"
-    },
-    "population": 11555997,
-    "gini": { "2018": 27.2 },
-    "fifa": "BEL",
-    "car": { "signs": ["B"], "side": "right" },
-    "timezones": ["UTC+01:00"],
-    "continents": ["Europe"],
-    "flags": {
-      "png": "https://flagcdn.com/w320/be.png",
-      "svg": "https://flagcdn.com/be.svg",
-      "alt": "The flag of Belgium is composed of three equal vertical bands of black, yellow and red."
-    },
-    "coatOfArms": {
-      "png": "https://mainfacts.com/media/images/coats_of_arms/be.png",
-      "svg": "https://mainfacts.com/media/images/coats_of_arms/be.svg"
-    },
-    "startOfWeek": "monday",
-    "capitalInfo": { "latlng": [50.83, 4.33] },
-    "postalCode": { "format": "####", "regex": "^(\\d{4})$" }
-  }
-]
+    {
+      "iso639_1": "tk",
+      "iso639_2": "tuk",
+      "name": "Turkmen",
+      "nativeName": "Türkmen"
+    }
+  ],
+  "translations": {
+    "br": "Afghanistan",
+    "pt": "Afeganistão",
+    "nl": "Afghanistan",
+    "hr": "Afganistan",
+    "fa": "افغانستان",
+    "de": "Afghanistan",
+    "es": "Afganistán",
+    "fr": "Afghanistan",
+    "ja": "アフガニスタン",
+    "it": "Afghanistan",
+    "hu": "Afganisztán"
+  },
+  "flag": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Flag_of_the_Taliban.svg",
+  "regionalBlocs": [
+    {
+      "acronym": "SAARC",
+      "name": "South Asian Association for Regional Cooperation"
+    }
+  ],
+  "cioc": "AFG",
+  "independent": true
+}
