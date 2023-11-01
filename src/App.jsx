@@ -42,7 +42,7 @@ export default function App() {
       <div className="font-nunito">
         <div className="p-5 lg:px-12 py-8 dark:bg-dark-blue dark:text-white bg-white text-black duration-300 flex justify-between">
           <h1 className="text-lg lg:text-2xl font-bold">Where in the world?</h1>
-          <div onClick={toggleTheme} className="text-base lg:text-xl">
+          <div onClick={toggleTheme} className="text-base lg:text-xl cursor-pointer">
             {theme === "light" ? (
               <div className="flex items-center">
                 <img src={moon} alt="dark mode" />

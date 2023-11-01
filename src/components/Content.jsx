@@ -53,22 +53,6 @@ export default function Content() {
     }
   };
 
-  // useEffect(() => {
-  //   const formattedData = fetchedData.map((country) => ({
-  //     name: country.name.common,
-  //     nativeName: Object.values(country.name.nativeName)[0].common,
-  //     topLevelDomain: country.tld[0],
-  //     region: country.region,
-  //     subRegion: country.subregion,
-  //     capital: country.capital,
-  //     population: country.population,
-  //     languages: Object.values(country.languages)[0],
-  //     currency: Object.values(country.currencies)[0].name,
-  //     flag: country.flags.svg,
-  //   }));
-  //   setCountries(formattedData);
-  // }, [fetchedData]);
-
   return (
     <div className="p-5 lg:px-12 py-8 bg-light-gray dark:bg-dark-gray duration-300 min-h-screen">
       <div className="flex flex-col lg:flex-row justify-between">
