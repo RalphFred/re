@@ -16,10 +16,10 @@ export default function Content() {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        await fetch(`https://restcountries.com/v2/${region}`)
+        await fetch(`https://restcountries.com/v2/all`)
           .then((res) => res.json())
           .then((data) => {
-            setFetchedData(data);
+            setFetchedData(data)
             setCountriesData(data);
             setIsLoading(false);
           });
@@ -28,23 +28,37 @@ export default function Content() {
       }
     };
     fetchData();
-  }, [region]);
+  }, []);
+
+  // const handleSelectChange = (e) => {
+  //   const selectedValue = e.target.value;
+
+  //   if (selectedValue === "all") {
+  //     setRegion(selectedValue);
+  //   } else {
+  //     setRegion(`region/${selectedValue}`);
+  //   }
+  // };
 
   const handleSelectChange = (e) => {
     const selectedValue = e.target.value;
-
+  
     if (selectedValue === "all") {
-      setRegion(selectedValue);
+      setCountriesData(fetchedData);
     } else {
-      setRegion(`region/${selectedValue}`);
+      const filteredData = fetchedData.filter((obj) =>
+        obj.region.toLowerCase() === selectedValue.toLowerCase()
+      );
+      setCountriesData(filteredData);
     }
   };
+  
 
   const filterCountries = (e) => {
     const inputValue = e.target.value;
     setValue(inputValue);
 
-    const filteredData = fetchedData.filter((obj) =>
+    const filteredData = countriesData.filter((obj) =>
       obj.name.toLowerCase().includes(inputValue.toLowerCase())
     );
 
