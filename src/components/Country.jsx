@@ -73,16 +73,12 @@ export default function Country() {
 
   return (
     <div className="p-5 lg:px-12 py-8 bg-light-gray dark:bg-dark-gray text-black dark:text-white duration-300 min-h-screen ">
-      {/* <Link to="/">
+      <Link to="/">
         <button 
         className="text-xl px-8 lg:px-12 py-2 rounded-lg dark:bg-dark-blue mb-8 border-2 dark:border-none">
           &larr;<span className="ml-2">Back</span>
         </button>
-      </Link> */}
-
-      <button className="text-xl px-8 lg:px-12 py-2 rounded-lg dark:bg-dark-blue mb-8 border-2 dark:border-none">
-        &larr;<span className="ml-2">Back</span>
-      </button>
+      </Link>
 
       {isLoading ? (
         <CountryLoad />
