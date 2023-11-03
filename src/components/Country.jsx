@@ -1,11 +1,10 @@
-import { Link, useParams, useHistory } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import { useState, useEffect } from "react";
 
 import CountryLoad from "./CountryLoad";
 
 export default function Country() {
   const { name } = useParams();
-  const history = useHistory();
 
   const [fetchedData, setFetchedData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
